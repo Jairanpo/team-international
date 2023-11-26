@@ -1,9 +1,5 @@
 # Standard library:
 import unittest
-# -- -- -- -- -- -- -- -- -- -- -- -- -- --
-# Third party:
-# -- -- -- -- -- -- -- -- -- -- -- -- -- --
-# project:
 from data_capture import DataCapture
 # =============================================================================
 
@@ -118,3 +114,4 @@ class TestDataCapture(unittest.TestCase):
         self.assertEqual(stats.less(4), [3, 3])
         self.assertEqual(stats.between(3, 6), [3, 3, 4, 6])
         self.assertEqual(stats.greater(4), [6, 9])
+

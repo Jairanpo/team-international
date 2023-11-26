@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-# Standard library:
 from functools import wraps
-# -- -- -- -- -- -- -- -- -- -- -- -- -- --
-# Third party:
-# -- -- -- -- -- -- -- -- -- -- -- -- -- --
-# project:
-# =============================================================================
-
 
 def validate_int_only_arguments(fn):
     @wraps(fn)

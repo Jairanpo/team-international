@@ -1,3 +1,6 @@
+## Requirements
+Python version 3.x
+
 ## Code challenge made with the following requirements:
 
 ___
@@ -31,9 +34,6 @@ stats.greater(4) # should return 2 (6 and 9 are the only two values greater than
 
 ## How to use?
 ___ 
-This test was made using python 3.7.6, and there are some string formatting
-that will fail if not used with a python version that supports them.
-
 Place your console inside the project directory and directly execute 
 the python repl and start building your logic by importing the 
 data_capture.py file.
