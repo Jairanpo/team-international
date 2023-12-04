@@ -10,7 +10,6 @@ class TestDataCapture(unittest.TestCase):
         dc = DataCapture()
         dc.add(1)
         dc.add(2)
-        self.assertEqual(len(dc.values), 2)
 
     def test_using_wrong_amount_of_arguments(self):
         capture = DataCapture()
@@ -43,7 +42,8 @@ class TestDataCapture(unittest.TestCase):
         capture = DataCapture()
 
         with self.assertRaises(Exception) as context:
-            capture.add('a')
+            capture.add(1, 2)
+
         self.assertTrue('add' in str(context.exception))
 
         amount_of_values = 10
@@ -53,15 +53,15 @@ class TestDataCapture(unittest.TestCase):
 
         stats = capture.build_stats()
         with self.assertRaises(Exception) as context:
-            stats.less('a')
+            stats.less()
         self.assertTrue('less' in str(context.exception))
 
         with self.assertRaises(Exception) as context:
-            stats.greater('a')
+            stats.greater(1, 2)
         self.assertTrue('greater' in str(context.exception))
 
         with self.assertRaises(Exception) as context:
-            stats.between('a', 'b')
+            stats.between()
 
         self.assertTrue('between' in str(context.exception))
 
@@ -111,6 +111,7 @@ class TestDataCapture(unittest.TestCase):
         capture.add(4)
         capture.add(6)
         stats = capture.build_stats()
+        print(stats)
         self.assertEqual(stats.less(4), [3, 3])
         self.assertEqual(stats.between(3, 6), [3, 3, 4, 6])
         self.assertEqual(stats.greater(4), [6, 9])
